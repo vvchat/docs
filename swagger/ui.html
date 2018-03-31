@@ -32,7 +32,7 @@
     <div class="dc-card">
       <div id="react-search-results-root"></div>
       <div id="page-content" class="doc-formatting">
-        <h1 id="Swagger-UI"><a href="#Swagger-UI" class="headerlink" title="Swagger UI"></a>Swagger UI</h1><div class="hexo-swagger-ui hexo-swagger-ui-v2"><link rel="stylesheet" href="/style/swagger-ui-v2.css">
+        <h1 id="Swagger-UI"><a href="#Swagger-UI" class="headerlink" title="Swagger UI"></a>Swagger UI</h1><div class="hexo-swagger-ui hexo-swagger-ui-v2"><link rel="stylesheet" href="/docs/style/swagger-ui-v2.css">
 
 <!-- dependencies -->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/js-yaml/3.10.0/js-yaml.min.js"></script>
@@ -41,13 +41,13 @@
 <!-- angular-swagger-ui -->
 <script src="https://unpkg.com/angular-swagger-ui@0.5.4/dist/scripts/swagger-ui.min.js"></script>
 <script src="https://unpkg.com/angular-swagger-ui@0.5.4/dist/scripts/modules/swagger-yaml-parser.min.js"></script>
-<div class="swagger-wrap bootstrap" id="swagger-wrap-2">
-  <div swagger-ui="" url="'/adc44f9e4bc5970601168db6b6ff3130/_petstore.json'" api-explorer="true" parser="auto" trusted-sources="true" validator-url="false" permalinks="true" download="Download specification">
+<div class="swagger-wrap bootstrap" id="swagger-wrap-1">
+  <div swagger-ui="" url="'/docs/a1ceda6d1b2fb19ea69fe12cfcf90696/_petstore.json'" api-explorer="true" parser="auto" trusted-sources="true" validator-url="false" permalinks="true" download="Download specification">
   </div>
 </div>
 <script type="text/javascript">
   angular
-  .module('swagger-module-2', ['ngSanitize', 'swaggerUi'])
+  .module('swagger-module-1', ['ngSanitize', 'swaggerUi'])
   .config([
     '$provide',
     '$locationProvider',
@@ -62,7 +62,7 @@
       $locationProvider.hashPrefix('');
     }
   ]);
-  angular.bootstrap(document.getElementById('swagger-wrap-2'), ['swagger-module-2'])
+  angular.bootstrap(document.getElementById('swagger-wrap-1'), ['swagger-module-1'])
 </script>
 </div>
 
