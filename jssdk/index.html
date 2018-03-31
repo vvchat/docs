@@ -24,27 +24,424 @@
   </head>
   <body>
 
-   <script>window.__INITIAL_STATE__ = {"page":{"title":"vvchat文档","path":"jssdk/index.html"},"data":{"navigation":{"logo":{"text":"vvchat开放平台","type":"link","path":"index.html"},"main":[{"text":"应用内H5","type":"link","path":"jssdk/index.html"},{"text":"RESTful API","type":"label","children":[{"text":"用户服务","type":"link","path":"swagger/userservices.html"},{"text":"关系服务","type":"link","path":"swagger/relationapi.html"},{"text":"支付基础服务","type":"link","path":"swagger/payv2api.html"},{"text":"支付业务服务","type":"link","path":"swagger/paybusapi.html"},{"text":"店铺服务","type":"link","path":"swagger/storeapi.html"},{"text":"群组服务","type":"link","path":"swagger/groupapi.html"},{"text":"权限服务","type":"link","path":"swagger/rbacapi.html"},{"text":"短信服务","type":"link","path":"swagger/smsapi.html"},{"text":"红包服务","type":"link","path":"swagger/redpacket.html"},{"text":"通知服务","type":"link","path":"swagger/notificationapi.html"},{"text":"名字服务","type":"link","path":"swagger/nameapi.html"},{"text":"通讯录服务","type":"link","path":"swagger/contactsapi.html"},{"text":"设置服务","type":"link","path":"swagger/settingapi.html"},{"text":"反馈服务","type":"link","path":"swagger/feedapi.html"},{"text":"离线消息服务","type":"link","path":"swagger/imofflinemsgapi.html"},{"text":"消息服务","type":"link","path":"swagger/messageapi.html"}]}]}},"config":{"timezone":null,"root":"/","time_format":"HH:mm:ss","theme":"hexo-theme-doc","theme_config":{"swagger_ui":{"version":2,"permalinks":true,"api_explorer":true,"download":"Download specification","show_extensions":false,"deep_linking":true,"display_operation_id":false,"doc_expansion":"none"},"search":{"skip":false,"background":false,"route":"/lunr.json"},"favicon":"/favicon.ico"}}}</script>
+   <script>window.__INITIAL_STATE__ = {"page":{"title":"vvchat文档","path":"jssdk/index.html"},"data":{"navigation":{"logo":{"text":"VVChat开放平台","type":"link","path":"index.html"},"main":[{"text":"应用内H5","type":"link","path":"jssdk/index.html"},{"text":"RESTful API","type":"label","children":[{"text":"用户服务","type":"link","path":"swagger/userservices.html"},{"text":"关系服务","type":"link","path":"swagger/relationapi.html"},{"text":"支付基础服务","type":"link","path":"swagger/payv2api.html"},{"text":"支付业务服务","type":"link","path":"swagger/paybusapi.html"},{"text":"店铺服务","type":"link","path":"swagger/storeapi.html"},{"text":"群组服务","type":"link","path":"swagger/groupapi.html"},{"text":"权限服务","type":"link","path":"swagger/rbacapi.html"},{"text":"短信服务","type":"link","path":"swagger/smsapi.html"},{"text":"红包服务","type":"link","path":"swagger/redpacket.html"},{"text":"通知服务","type":"link","path":"swagger/notificationapi.html"},{"text":"名字服务","type":"link","path":"swagger/nameapi.html"},{"text":"通讯录服务","type":"link","path":"swagger/contactsapi.html"},{"text":"设置服务","type":"link","path":"swagger/settingapi.html"},{"text":"反馈服务","type":"link","path":"swagger/feedapi.html"},{"text":"离线消息服务","type":"link","path":"swagger/imofflinemsgapi.html"},{"text":"消息服务","type":"link","path":"swagger/messageapi.html"}]}]}},"config":{"timezone":null,"root":"/","time_format":"HH:mm:ss","theme":"hexo-theme-doc","theme_config":{"swagger_ui":{"version":2,"permalinks":true,"api_explorer":true,"download":"Download specification","show_extensions":false,"deep_linking":true,"display_operation_id":false,"doc_expansion":"none"},"search":{"skip":false,"background":false,"route":"/lunr.json"},"favicon":"/favicon.ico"}}}</script>
 
-    <div id="react-navigation-root"><div class="doc-navigation" data-reactroot=""><nav class="doc-navbar"><a href="/index.html" class="doc-navbar__logo"><img src="/images/logo.png" class="doc-navbar__logo__img"/><span class="doc-navbar__logo__text">vvchat开放平台</span></a><i class="dc-icon dc-icon--close dc-icon--interactive doc-sidebar-close doc-navbar__sidebar-close doc-navbar__sidebar-close--desktop"></i><i class="dc-icon dc-icon--menu dc-icon--interactive doc-sidebar-toggle doc-navbar__sidebar-toggle"></i></nav><nav class="doc-sidebar"><div class="doc-sidebar__vertical-menu"><i class="dc-icon dc-icon--menu dc-icon--interactive doc-sidebar-toggle doc-sidebar-toggle--primary doc-sidebar__vertical-menu__item"></i><i class="dc-icon dc-icon--search dc-icon--interactive doc-sidebar__vertical-menu__item doc-sidebar__vertical-menu__item--primary"></i></div><div class="doc-sidebar-content"><div class="doc-sidebar__search-form"></div><ul class="doc-sidebar-list"></ul></div></nav></div></div>
+    <div id="react-navigation-root"><div class="doc-navigation" data-reactroot=""><nav class="doc-navbar"><a href="/index.html" class="doc-navbar__logo"><img src="/images/logo.png" class="doc-navbar__logo__img"/><span class="doc-navbar__logo__text">VVChat开放平台</span></a><i class="dc-icon dc-icon--close dc-icon--interactive doc-sidebar-close doc-navbar__sidebar-close doc-navbar__sidebar-close--desktop"></i><i class="dc-icon dc-icon--menu dc-icon--interactive doc-sidebar-toggle doc-navbar__sidebar-toggle"></i></nav><nav class="doc-sidebar"><div class="doc-sidebar__vertical-menu"><i class="dc-icon dc-icon--menu dc-icon--interactive doc-sidebar-toggle doc-sidebar-toggle--primary doc-sidebar__vertical-menu__item"></i><i class="dc-icon dc-icon--search dc-icon--interactive doc-sidebar__vertical-menu__item doc-sidebar__vertical-menu__item--primary"></i></div><div class="doc-sidebar-content"><div class="doc-sidebar__search-form"></div><ul class="doc-sidebar-list"></ul></div></nav></div></div>
     <div class="doc-content">
   <div class="dc-page">
     <div class="dc-card">
       <div id="react-search-results-root"></div>
       <div id="page-content" class="doc-formatting">
-        <h1 id="vvchat文档"><a href="#vvchat文档" class="headerlink" title="vvchat文档"></a>vvchat文档</h1><p> JSSDK 用户应用内的H5调用</p>
-<h2 id="Getting-Started"><a href="#Getting-Started" class="headerlink" title="Getting Started"></a>Getting Started</h2><p>To get started have a look first to the <a href="https://zalando-incubator.github.io/hexo-theme-doc/get-started.html#Requirements" target="_blank" rel="noopener">requirements</a>, then install <code>hexo-cli</code> with:</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ npm install -g hexo-cli</span><br></pre></td></tr></table></figure>
-<p>Now just clone <code>hexo-theme-doc-seed</code> repository:</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ git <span class="built_in">clone</span> https://github.com/zalando-incubator/hexo-theme-doc-seed.git &lt;directory&gt;</span><br></pre></td></tr></table></figure>
-<p>Go into the resulting directory and install dependencies:</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ npm install</span><br></pre></td></tr></table></figure>
-<p>Start the preview server locally with:</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo s</span><br></pre></td></tr></table></figure>
-<blockquote>
-<p>If you open your browser at <a href="http://localhost:4000" target="_blank" rel="noopener">http://localhost:4000</a> you should see the documentation website up and running.</p>
+        <h2 id="安装使用"><a href="#安装使用" class="headerlink" title="安装使用"></a>安装使用</h2><p> <strong>页面引入</strong></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;script src=&quot;http://xxxxxx/vvchatjssdk-1.0.0.js&quot;&gt;&lt;/script&gt;</span><br></pre></td></tr></table></figure>
+<p><strong>通过config进行配置</strong></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">vvchat.config(&#123;</span><br><span class="line">	debug: true</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+<p><strong>通过ready接口处理成功验证</strong></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">vvchat.ready(function()&#123;</span><br><span class="line">    //把相关接口放在ready函数中调用来确保正确执行。对于用户触发时才调用的接口，则可以直接调用，不需要放在ready函数中。</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+<p><strong>接口调用说明</strong></p>
+<p>所有js方法都有以下通用参数：</p>
+<ol>
+<li>method: 方法名</li>
+<li>options: 调用参数</li>
+<li>success：接口调用成功时执行的回调函数。</li>
+<li>error：接口调用失败时执行的回调函数。返回参数结构为 {“err_code”:400,”err_msg”:”失败”}</li>
+<li>complete：接口调用完成时执行的回调函数，无论成功或失败都会执行。</li>
+</ol>
+<p><strong>举例说明</strong></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">vvchat.call(METHOD,&#123;&#125;,function(result)&#123;</span><br><span class="line"> 	</span><br><span class="line">&#125;,function(error)&#123;</span><br><span class="line"></span><br><span class="line">&#125;,function(data)&#123;</span><br><span class="line"></span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+<h2 id="授权接口"><a href="#授权接口" class="headerlink" title="授权接口"></a>授权接口</h2><blockquote>
+<p>方法名</p>
 </blockquote>
-<h2 id="More-Informations"><a href="#More-Informations" class="headerlink" title="More Informations"></a>More Informations</h2><p>For more informations please visit the <a href="https://zalando-incubator.github.io/hexo-theme-doc/" target="_blank" rel="noopener">user documentation website</a>.</p>
+<p>auth</p>
+<blockquote>
+<p>参数</p>
+</blockquote>
+<table>
+<thead>
+<tr>
+<th>参数</th>
+<th style="text-align:center">类型</th>
+<th style="text-align:right">参考值</th>
+<th style="text-align:right">说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>app_id</td>
+<td style="text-align:center">string</td>
+<td style="text-align:right">test</td>
+<td style="text-align:right">平台发放的appid</td>
+</tr>
+<tr>
+<td>scope</td>
+<td style="text-align:center">string</td>
+<td style="text-align:right">snsapi_userinfo</td>
+<td style="text-align:right">权限 snsapi_userinfo(获取用户信息),sessionapi_sendmsg（获取会话发送消息权限）</td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<p>成功返回</p>
+</blockquote>
+<table>
+<thead>
+<tr>
+<th>参数</th>
+<th style="text-align:center">类型</th>
+<th style="text-align:right">参考值</th>
+<th style="text-align:right">说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>code</td>
+<td style="text-align:center">string</td>
+<td style="text-align:right">xxxxx</td>
+<td style="text-align:right">授权码（调用<strong>获取访问凭证API</strong>可以获取到对应的token）</td>
+</tr>
+</tbody>
+</table>
+<h2 id="获取当前会话信息"><a href="#获取当前会话信息" class="headerlink" title="获取当前会话信息"></a>获取当前会话信息</h2><p>当前h5在会话里被打开，此接口能获取到当前会话信息</p>
+<blockquote>
+<p>方法名</p>
+</blockquote>
+<p>getSession</p>
+<blockquote>
+<p>参数</p>
+</blockquote>
+<p>无</p>
+<blockquote>
+<p>成功返回</p>
+</blockquote>
+<table>
+<thead>
+<tr>
+<th>参数</th>
+<th style="text-align:center">类型</th>
+<th style="text-align:right">参考值</th>
+<th style="text-align:right">说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>session_id</td>
+<td style="text-align:center">string</td>
+<td style="text-align:right">IqxDpc-s6S_9RaXMmag39YVH7W810Z57</td>
+<td style="text-align:right">会话唯一标示</td>
+</tr>
+<tr>
+<td>session_type</td>
+<td style="text-align:center">int</td>
+<td style="text-align:right">2</td>
+<td style="text-align:right">会话类型： 1.单聊 2.群聊</td>
+</tr>
+</tbody>
+</table>
+<h2 id="获取选中的会话信息"><a href="#获取选中的会话信息" class="headerlink" title="获取选中的会话信息"></a>获取选中的会话信息</h2><p>调用此方法将弹出会话选择列表，用户选择了某个会话确认后，将获取到此会话的信息</p>
+<blockquote>
+<p>方法名</p>
+</blockquote>
+<p>getSession</p>
+<blockquote>
+<p>参数</p>
+</blockquote>
+<p>无</p>
+<blockquote>
+<p>成功返回</p>
+</blockquote>
+<table>
+<thead>
+<tr>
+<th>参数</th>
+<th style="text-align:center">类型</th>
+<th style="text-align:right">参考值</th>
+<th style="text-align:right">说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>session_id</td>
+<td style="text-align:center">string</td>
+<td style="text-align:right">IqxDpc-s6S_9RaXMmag39YVH7W810Z57</td>
+<td style="text-align:right">会话唯一标示</td>
+</tr>
+<tr>
+<td>session_type</td>
+<td style="text-align:center">int</td>
+<td style="text-align:right">2</td>
+<td style="text-align:right">会话类型： 1.单聊 2.群聊</td>
+</tr>
+</tbody>
+</table>
+<h2 id="获取会话的授权码"><a href="#获取会话的授权码" class="headerlink" title="获取会话的授权码"></a>获取会话的授权码</h2><p>弹出授权页面，用户确认授权后将获取到授权码</p>
+<blockquote>
+<p>方法名</p>
+</blockquote>
+<p>auth</p>
+<blockquote>
+<p>参数</p>
+</blockquote>
+<table>
+<thead>
+<tr>
+<th>参数</th>
+<th style="text-align:center">类型</th>
+<th style="text-align:right">参考值</th>
+<th style="text-align:right">说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>app_id</td>
+<td style="text-align:center">string</td>
+<td style="text-align:right">test</td>
+<td style="text-align:right">平台发放的appid</td>
+</tr>
+<tr>
+<td>scope</td>
+<td style="text-align:center">string</td>
+<td style="text-align:right">sessionapi_sendmsg:SESSION_ID:SESSION_TYPE</td>
+<td style="text-align:right">SESSION_ID和SESSION_TYPE为返回的会话信息</td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<p>成功返回</p>
+</blockquote>
+<table>
+<thead>
+<tr>
+<th>参数</th>
+<th style="text-align:center">类型</th>
+<th style="text-align:right">参考值</th>
+<th style="text-align:right">说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>code</td>
+<td style="text-align:center">string</td>
+<td style="text-align:right">xxxxx</td>
+<td style="text-align:right">授权码（调用<strong>获取访问凭证API</strong>可以获取到对应的token）</td>
+</tr>
+</tbody>
+</table>
+<h2 id="支付"><a href="#支付" class="headerlink" title="支付"></a>支付</h2><p>弹出支付付款页面，用户支付成功后回调成功方法</p>
+<blockquote>
+<p>方法名</p>
+</blockquote>
+<p>pay</p>
+<blockquote>
+<p>参数</p>
+</blockquote>
+<table>
+<thead>
+<tr>
+<th>参数</th>
+<th style="text-align:center">类型</th>
+<th style="text-align:right">参考值</th>
+<th style="text-align:right">说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>imprest_code</td>
+<td style="text-align:center">string</td>
+<td style="text-align:right">xxxxxxx</td>
+<td style="text-align:right">预付款编号</td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<p>成功返回</p>
+</blockquote>
+<table>
+<thead>
+<tr>
+<th>参数</th>
+<th style="text-align:center">类型</th>
+<th style="text-align:right">参考值</th>
+<th style="text-align:right">说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>trade_no</td>
+<td style="text-align:center">string</td>
+<td style="text-align:right">xxxxx</td>
+<td style="text-align:right">交易编号</td>
+</tr>
+</tbody>
+</table>
+<h2 id="获取访问凭证API-（服务端调用）"><a href="#获取访问凭证API-（服务端调用）" class="headerlink" title="获取访问凭证API （服务端调用）"></a>获取访问凭证API （服务端调用）</h2><p>http状态码为200 将返回成功返回的参数。http状态码为400 将返回错误返回参数</p>
+<blockquote>
+<p>请求地址</p>
+</blockquote>
+<p>GET  <a href="http://BASE_URL/userservices/v2/authorization/token?app_id=APPID&amp;app_key=APPKEY&amp;code=CODE" target="_blank" rel="noopener">http://BASE_URL/userservices/v2/authorization/token?app_id=APPID&amp;app_key=APPKEY&amp;code=CODE</a></p>
+<blockquote>
+<p>请求参数</p>
+</blockquote>
+<table>
+<thead>
+<tr>
+<th>参数</th>
+<th style="text-align:center">类型</th>
+<th style="text-align:right">作用域</th>
+<th style="text-align:right">参考值</th>
+<th style="text-align:right">说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>app_id</td>
+<td style="text-align:center">string</td>
+<td style="text-align:right">query</td>
+<td style="text-align:right">test</td>
+<td style="text-align:right">平台生成</td>
+</tr>
+<tr>
+<td>app_key</td>
+<td style="text-align:center">string</td>
+<td style="text-align:right">query</td>
+<td style="text-align:right">xxxxx</td>
+<td style="text-align:right">平台生成</td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<p>成功返回 200</p>
+</blockquote>
+<table>
+<thead>
+<tr>
+<th>参数</th>
+<th style="text-align:center">类型</th>
+<th style="text-align:right">参考值</th>
+<th style="text-align:right">说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>open_id</td>
+<td style="text-align:center">string</td>
+<td style="text-align:right">IqxDpc-s6S_9RaXMmag39YVH7W810Z57</td>
+<td style="text-align:right">用户唯一标示</td>
+</tr>
+<tr>
+<td>scope</td>
+<td style="text-align:center">string</td>
+<td style="text-align:right">snsapi_userinfo</td>
+<td style="text-align:right">权限</td>
+</tr>
+<tr>
+<td>token</td>
+<td style="text-align:center">string</td>
+<td style="text-align:right">eyJhbGciOiJSUzI1NiIsInR5cCI6xxxxx</td>
+<td style="text-align:right">访问凭证</td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<p>错误返回 400</p>
+</blockquote>
+<table>
+<thead>
+<tr>
+<th>参数</th>
+<th style="text-align:center">类型</th>
+<th style="text-align:right">参考值</th>
+<th style="text-align:right">说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>err_code</td>
+<td style="text-align:center">int</td>
+<td style="text-align:right">400</td>
+<td style="text-align:right">错误代号</td>
+</tr>
+<tr>
+<td>err_msg</td>
+<td style="text-align:center">string</td>
+<td style="text-align:right">请求失败！</td>
+<td style="text-align:right">错误信息</td>
+</tr>
+</tbody>
+</table>
+<h2 id="发送消息接口API-（服务端调用）"><a href="#发送消息接口API-（服务端调用）" class="headerlink" title="发送消息接口API （服务端调用）"></a>发送消息接口API （服务端调用）</h2><p>http状态码为200 将返回成功返回的参数。http状态码为400 将返回错误返回参数</p>
+<blockquote>
+<p>请求地址</p>
+</blockquote>
+<p>POST  <a href="http://BASE_URL/messageapi/v1/authorization/sendmsg" target="_blank" rel="noopener">http://BASE_URL/messageapi/v1/authorization/sendmsg</a></p>
+<p>Content-Type: application/json</p>
+<blockquote>
+<p>请求参数</p>
+</blockquote>
+<table>
+<thead>
+<tr>
+<th>参数</th>
+<th style="text-align:center">类型</th>
+<th style="text-align:right">作用域</th>
+<th style="text-align:right">参考值</th>
+<th style="text-align:right">说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Authorization</td>
+<td style="text-align:center">string</td>
+<td style="text-align:right">header</td>
+<td style="text-align:right">eyJhbGciOiJSUzI1NiIsInR5cCI6xxxxx</td>
+<td style="text-align:right">平台生成</td>
+</tr>
+<tr>
+<td>type</td>
+<td style="text-align:center">string</td>
+<td style="text-align:right">body</td>
+<td style="text-align:right">text</td>
+<td style="text-align:right">消息类型</td>
+</tr>
+<tr>
+<td>content</td>
+<td style="text-align:center">string</td>
+<td style="text-align:right">body</td>
+<td style="text-align:right">this is msg!</td>
+<td style="text-align:right">消息内容</td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<p>成功返回 200</p>
+</blockquote>
+<p>无需处理返回参数 判断http状态码为200 必定成功 否则失败。</p>
+<blockquote>
+<p>错误返回 400</p>
+</blockquote>
+<table>
+<thead>
+<tr>
+<th>参数</th>
+<th style="text-align:center">类型</th>
+<th style="text-align:right">参考值</th>
+<th style="text-align:right">说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>err_code</td>
+<td style="text-align:center">int</td>
+<td style="text-align:right">400</td>
+<td style="text-align:right">错误代号</td>
+</tr>
+<tr>
+<td>err_msg</td>
+<td style="text-align:center">string</td>
+<td style="text-align:right">请求失败！</td>
+<td style="text-align:right">错误信息</td>
+</tr>
+</tbody>
+</table>
 
         <div id="react-support-footer-root"></div>
       </div>
