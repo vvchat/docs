@@ -24,7 +24,7 @@
   </head>
   <body>
 
-   <script>window.__INITIAL_STATE__ = {"page":{"path":"appsdk/index.html","title":""},"data":{"navigation":{"logo":{"text":"企云信开放平台","type":"link","path":"index.html"},"main":[{"text":"H5应用","type":"label","children":[{"text":"IM内H5","type":"link","path":"jssdk/index.html"}]},{"text":"H5应用","type":"label","path":"appsdk/index.html"}]}},"config":{"timezone":null,"root":"/","time_format":"HH:mm:ss","theme":"hexo-theme-doc","theme_config":{"swagger_ui":{"version":2,"permalinks":true,"api_explorer":true,"download":"Download specification","show_extensions":false,"deep_linking":true,"display_operation_id":false,"doc_expansion":"none"},"search":{"skip":false,"background":false,"route":"/lunr.json"},"favicon":"/favicon.ico"}}}</script>
+   <script>window.__INITIAL_STATE__ = {"page":{"path":"appsdk/index.html","title":""},"data":{"navigation":{"logo":{"text":"企云信开放平台","type":"link","path":"index.html"},"main":[{"text":"H5应用","type":"label","children":[{"text":"IM内H5","type":"link","path":"jssdk/index.html"}]},{"text":"移动APP","type":"link","path":"appsdk/index.html"},{"text":"服务端API","type":"link","path":"publicapi/index.html"}]}},"config":{"timezone":null,"root":"/","time_format":"HH:mm:ss","theme":"hexo-theme-doc","theme_config":{"swagger_ui":{"version":2,"permalinks":true,"api_explorer":true,"download":"Download specification","show_extensions":false,"deep_linking":true,"display_operation_id":false,"doc_expansion":"none"},"search":{"skip":false,"background":false,"route":"/lunr.json"},"favicon":"/favicon.ico"}}}</script>
 
     <div id="react-navigation-root"><div class="doc-navigation" data-reactroot=""><nav class="doc-navbar"><a href="/index.html" class="doc-navbar__logo"><img src="/images/logo.png" class="doc-navbar__logo__img"/><span class="doc-navbar__logo__text">企云信开放平台</span></a><i class="dc-icon dc-icon--close dc-icon--interactive doc-sidebar-close doc-navbar__sidebar-close doc-navbar__sidebar-close--desktop"></i><i class="dc-icon dc-icon--menu dc-icon--interactive doc-sidebar-toggle doc-navbar__sidebar-toggle"></i></nav><nav class="doc-sidebar"><div class="doc-sidebar__vertical-menu"><i class="dc-icon dc-icon--menu dc-icon--interactive doc-sidebar-toggle doc-sidebar-toggle--primary doc-sidebar__vertical-menu__item"></i><i class="dc-icon dc-icon--search dc-icon--interactive doc-sidebar__vertical-menu__item doc-sidebar__vertical-menu__item--primary"></i></div><div class="doc-sidebar-content"><div class="doc-sidebar__search-form"></div><ul class="doc-sidebar-list"></ul></div></nav></div></div>
     <div class="doc-content">
@@ -32,19 +32,19 @@
     <div class="dc-card">
       <div id="react-search-results-root"></div>
       <div id="page-content" class="doc-formatting">
-        <h2 id="移动应用vvchat登录开发指南"><a href="#移动应用vvchat登录开发指南" class="headerlink" title="移动应用vvchat登录开发指南"></a>移动应用<strong>vvchat</strong>登录开发指南</h2><h4 id="准备工作"><a href="#准备工作" class="headerlink" title="准备工作"></a>准备工作</h4><p>移动应用<strong>vvchat</strong>登录是基于<a href="http://oauth.net/2/" target="_blank" rel="noopener">OAuth2.0协议标准</a>构建的OAuth2.0授权登录系统。</p>
-<p>在进行<strong>vvchat</strong> OAuth2.0授权登录接入之前，在VVChat开放平台注册开发者帐号，并拥有一个已审核通过的移动应用，并获得相应的AppID和AppKey，申请VVChat登录且通过审核后，可开始接入流程。</p>
+        <h2 id="用户信息授权"><a href="#用户信息授权" class="headerlink" title="用户信息授权"></a>用户信息授权</h2><h4 id="准备工作"><a href="#准备工作" class="headerlink" title="准备工作"></a>准备工作</h4><p>移动应用<strong>企云信</strong>登录是基于<a href="http://oauth.net/2/" target="_blank" rel="noopener">OAuth2.0协议标准</a>构建的OAuth2.0授权登录系统。</p>
+<p>在进行<strong>企云信</strong> OAuth2.0授权登录接入之前，在VVChat开放平台注册开发者帐号，并拥有一个已审核通过的移动应用，并获得相应的AppID和AppKey，申请VVChat登录且通过审核后，可开始接入流程。</p>
 <h4 id="授权流程说明"><a href="#授权流程说明" class="headerlink" title="授权流程说明"></a>授权流程说明</h4><p>授权流程分三步：</p>
 <ol>
-<li><p>第三方发起<strong>vvchat</strong>授权登录请求，<strong>vvchat</strong>用户允许授权第三方应用后，<strong>vvchat</strong>会拉起应用，并且带上授权临时票据code参数；</p>
+<li><p>第三方发起<strong>企云信</strong>授权登录请求，<strong>企云信</strong>用户允许授权第三方应用后，<strong>企云信</strong>会拉起应用，并且带上授权临时票据code参数；</p>
 </li>
 <li><p>通过code参数加上AppID和AppKey等，通过API换取访问token；</p>
 </li>
 <li><p>通过token进行接口调用，获取用户基本数据资源或帮助用户实现基本操作。（根据scope的不同可以获取到不同的权限。）</p>
 </li>
 </ol>
-<h5 id="第一步：请求CODE"><a href="#第一步：请求CODE" class="headerlink" title="第一步：请求CODE"></a>第一步：请求CODE</h5><p>开发者需要配合使用<strong>vvchat</strong>开放平台提供的SDK进行授权登录请求接入。正确接入SDK后并拥有相关授权域（scope，</p>
-<p>）权限后，开发者移动应用会在终端本地拉起<strong>vvchat</strong>应用进行授权登录，<strong>vvchat</strong>用户确认后<strong>vvchat</strong>将拉起开发者移动应用，并带上授权临时票据（code）。</p>
+<h5 id="第一步：请求CODE"><a href="#第一步：请求CODE" class="headerlink" title="第一步：请求CODE"></a>第一步：请求CODE</h5><p>开发者需要配合使用<strong>企云信</strong>开放平台提供的SDK进行授权登录请求接入。正确接入SDK后并拥有相关授权域（scope，</p>
+<p>）权限后，开发者移动应用会在终端本地拉起<strong>企云信</strong>应用进行授权登录，<strong>企云信</strong>用户确认后<strong>企云信</strong>将拉起开发者移动应用，并带上授权临时票据（code）。</p>
 <p>Android平台应用授权登录接入代码示例（请参考Android接入指南）：</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">// 构建登录请求对象</span><br><span class="line">LoginRequest loginRequest = new LoginRequest();</span><br><span class="line">loginRequest.setAppId(appId);</span><br><span class="line">loginRequest.setScope(&quot;snsapi_userinfo&quot;);</span><br><span class="line">loginRequest.setState(&quot;test&quot;);</span><br><span class="line">// 发起登录请求</span><br><span class="line">SDKUtils.SendRequest(loginRequest, context);</span><br></pre></td></tr></table></figure>
 <h5 id="参数说明"><a href="#参数说明" class="headerlink" title="参数说明"></a>参数说明</h5><table>
@@ -59,7 +59,7 @@
 <tr>
 <td style="text-align:left">app_id</td>
 <td style="text-align:left">是</td>
-<td style="text-align:left">应用唯一ID，<strong>vvchat</strong>开发平台下发</td>
+<td style="text-align:left">应用唯一ID，<strong>企云信</strong>开发平台下发</td>
 </tr>
 <tr>
 <td style="text-align:left">scope</td>
@@ -74,8 +74,8 @@
 </tbody>
 </table>
 <p><strong>可拉起vvchat打开授权登录页：</strong></p>
-<p><img src="/assets/Screenshot_2018-01-04-20-40-13.png" alt=""></p>
-<p>用户点击授权后，<strong>vvchat</strong>客户端会被拉起，跳转至授权界面，用户在该界面点击允许或取消，SDK将授权code传递给调用方。</p>
+<p><img src="/images/Screenshot_2018-01-04-20-40-13.png" alt=""></p>
+<p>用户点击授权后，<strong>企云信</strong>客户端会被拉起，跳转至授权界面，用户在该界面点击允许或取消，SDK将授权code传递给调用方。</p>
 <h5 id="返回说明"><a href="#返回说明" class="headerlink" title="返回说明"></a>返回说明</h5><table>
 <thead>
 <tr>
