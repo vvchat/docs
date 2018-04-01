@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
 
-    <title>企云信开放平台 | vvchat文档 </title>
+    <title>企云信开放平台 | 企云信文档 </title>
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
@@ -24,7 +24,7 @@
   </head>
   <body>
 
-   <script>window.__INITIAL_STATE__ = {"page":{"title":"vvchat文档","path":"jssdk/index.html"},"data":{"navigation":{"logo":{"text":"企云信开放平台","type":"link","path":"index.html"},"main":[{"text":"H5应用","type":"label","children":[{"text":"IM内H5","type":"link","path":"jssdk/index.html"}]},{"text":"移动APP","type":"link","path":"appsdk/index.html"},{"text":"服务端API","type":"link","path":"publicapi/index.html"}]}},"config":{"timezone":null,"root":"/","time_format":"HH:mm:ss","theme":"hexo-theme-doc","theme_config":{"swagger_ui":{"version":2,"permalinks":true,"api_explorer":true,"download":"Download specification","show_extensions":false,"deep_linking":true,"display_operation_id":false,"doc_expansion":"none"},"search":{"skip":false,"background":false,"route":"/lunr.json"},"favicon":"/favicon.ico"}}}</script>
+   <script>window.__INITIAL_STATE__ = {"page":{"title":"企云信文档","path":"jssdk/index.html"},"data":{"navigation":{"logo":{"text":"企云信开放平台","type":"link","path":"index.html"},"main":[{"text":"H5应用","type":"label","children":[{"text":"IM内H5","type":"link","path":"jssdk/index.html"},{"text":"手机H5","type":"link","path":"jssdk/h5.html"}]},{"text":"移动APP","type":"label","children":[{"text":"用户信息授权","type":"link","path":"appsdk/auth.html"},{"text":"APP支付","type":"link","path":"appsdk/pay.html"},{"text":"客服","type":"link","path":"appsdk/service.html"}]},{"text":"服务端","type":"label","children":[{"text":"API","type":"link","path":"publicapi/index.html"}]},{"text":"资源下载","type":"label","children":[{"text":"资源","type":"link","path":"resources/jssdk.html"}]}]}},"config":{"timezone":null,"root":"/","time_format":"HH:mm:ss","theme":"hexo-theme-doc","theme_config":{"swagger_ui":{"version":2,"permalinks":true,"api_explorer":true,"download":"Download specification","show_extensions":false,"deep_linking":true,"display_operation_id":false,"doc_expansion":"none"},"search":{"skip":false,"background":false,"route":"/lunr.json"},"favicon":"/favicon.ico"}}}</script>
 
     <div id="react-navigation-root"><div class="doc-navigation" data-reactroot=""><nav class="doc-navbar"><a href="/index.html" class="doc-navbar__logo"><img src="/images/logo.png" class="doc-navbar__logo__img"/><span class="doc-navbar__logo__text">企云信开放平台</span></a><i class="dc-icon dc-icon--close dc-icon--interactive doc-sidebar-close doc-navbar__sidebar-close doc-navbar__sidebar-close--desktop"></i><i class="dc-icon dc-icon--menu dc-icon--interactive doc-sidebar-toggle doc-navbar__sidebar-toggle"></i></nav><nav class="doc-sidebar"><div class="doc-sidebar__vertical-menu"><i class="dc-icon dc-icon--menu dc-icon--interactive doc-sidebar-toggle doc-sidebar-toggle--primary doc-sidebar__vertical-menu__item"></i><i class="dc-icon dc-icon--search dc-icon--interactive doc-sidebar__vertical-menu__item doc-sidebar__vertical-menu__item--primary"></i></div><div class="doc-sidebar-content"><div class="doc-sidebar__search-form"></div><ul class="doc-sidebar-list"></ul></div></nav></div></div>
     <div class="doc-content">
@@ -270,175 +270,6 @@
 <td style="text-align:center">string</td>
 <td style="text-align:right">xxxxx</td>
 <td style="text-align:right">交易编号</td>
-</tr>
-</tbody>
-</table>
-<h2 id="获取访问凭证API-（服务端调用）"><a href="#获取访问凭证API-（服务端调用）" class="headerlink" title="获取访问凭证API （服务端调用）"></a>获取访问凭证API （服务端调用）</h2><p>http状态码为200 将返回成功返回的参数。http状态码为400 将返回错误返回参数</p>
-<blockquote>
-<p>请求地址</p>
-</blockquote>
-<p>GET  <a href="http://BASE_URL/userservices/v2/authorization/token?app_id=APPID&amp;app_key=APPKEY&amp;code=CODE" target="_blank" rel="noopener">http://BASE_URL/userservices/v2/authorization/token?app_id=APPID&amp;app_key=APPKEY&amp;code=CODE</a></p>
-<blockquote>
-<p>请求参数</p>
-</blockquote>
-<table>
-<thead>
-<tr>
-<th>参数</th>
-<th style="text-align:center">类型</th>
-<th style="text-align:right">作用域</th>
-<th style="text-align:right">参考值</th>
-<th style="text-align:right">说明</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>app_id</td>
-<td style="text-align:center">string</td>
-<td style="text-align:right">query</td>
-<td style="text-align:right">test</td>
-<td style="text-align:right">平台生成</td>
-</tr>
-<tr>
-<td>app_key</td>
-<td style="text-align:center">string</td>
-<td style="text-align:right">query</td>
-<td style="text-align:right">xxxxx</td>
-<td style="text-align:right">平台生成</td>
-</tr>
-</tbody>
-</table>
-<blockquote>
-<p>成功返回 200</p>
-</blockquote>
-<table>
-<thead>
-<tr>
-<th>参数</th>
-<th style="text-align:center">类型</th>
-<th style="text-align:right">参考值</th>
-<th style="text-align:right">说明</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>open_id</td>
-<td style="text-align:center">string</td>
-<td style="text-align:right">IqxDpc-s6S_9RaXMmag39YVH7W810Z57</td>
-<td style="text-align:right">用户唯一标示</td>
-</tr>
-<tr>
-<td>scope</td>
-<td style="text-align:center">string</td>
-<td style="text-align:right">snsapi_userinfo</td>
-<td style="text-align:right">权限</td>
-</tr>
-<tr>
-<td>token</td>
-<td style="text-align:center">string</td>
-<td style="text-align:right">eyJhbGciOiJSUzI1NiIsInR5cCI6xxxxx</td>
-<td style="text-align:right">访问凭证</td>
-</tr>
-</tbody>
-</table>
-<blockquote>
-<p>错误返回 400</p>
-</blockquote>
-<table>
-<thead>
-<tr>
-<th>参数</th>
-<th style="text-align:center">类型</th>
-<th style="text-align:right">参考值</th>
-<th style="text-align:right">说明</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>err_code</td>
-<td style="text-align:center">int</td>
-<td style="text-align:right">400</td>
-<td style="text-align:right">错误代号</td>
-</tr>
-<tr>
-<td>err_msg</td>
-<td style="text-align:center">string</td>
-<td style="text-align:right">请求失败！</td>
-<td style="text-align:right">错误信息</td>
-</tr>
-</tbody>
-</table>
-<h2 id="发送消息接口API-（服务端调用）"><a href="#发送消息接口API-（服务端调用）" class="headerlink" title="发送消息接口API （服务端调用）"></a>发送消息接口API （服务端调用）</h2><p>http状态码为200 将返回成功返回的参数。http状态码为400 将返回错误返回参数</p>
-<blockquote>
-<p>请求地址</p>
-</blockquote>
-<p>POST  <a href="http://BASE_URL/messageapi/v1/authorization/sendmsg" target="_blank" rel="noopener">http://BASE_URL/messageapi/v1/authorization/sendmsg</a></p>
-<p>Content-Type: application/json</p>
-<blockquote>
-<p>请求参数</p>
-</blockquote>
-<table>
-<thead>
-<tr>
-<th>参数</th>
-<th style="text-align:center">类型</th>
-<th style="text-align:right">作用域</th>
-<th style="text-align:right">参考值</th>
-<th style="text-align:right">说明</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>Authorization</td>
-<td style="text-align:center">string</td>
-<td style="text-align:right">header</td>
-<td style="text-align:right">eyJhbGciOiJSUzI1NiIsInR5cCI6xxxxx</td>
-<td style="text-align:right">平台生成</td>
-</tr>
-<tr>
-<td>type</td>
-<td style="text-align:center">string</td>
-<td style="text-align:right">body</td>
-<td style="text-align:right">text</td>
-<td style="text-align:right">消息类型</td>
-</tr>
-<tr>
-<td>content</td>
-<td style="text-align:center">string</td>
-<td style="text-align:right">body</td>
-<td style="text-align:right">this is msg!</td>
-<td style="text-align:right">消息内容</td>
-</tr>
-</tbody>
-</table>
-<blockquote>
-<p>成功返回 200</p>
-</blockquote>
-<p>无需处理返回参数 判断http状态码为200 必定成功 否则失败。</p>
-<blockquote>
-<p>错误返回 400</p>
-</blockquote>
-<table>
-<thead>
-<tr>
-<th>参数</th>
-<th style="text-align:center">类型</th>
-<th style="text-align:right">参考值</th>
-<th style="text-align:right">说明</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>err_code</td>
-<td style="text-align:center">int</td>
-<td style="text-align:right">400</td>
-<td style="text-align:right">错误代号</td>
-</tr>
-<tr>
-<td>err_msg</td>
-<td style="text-align:center">string</td>
-<td style="text-align:right">请求失败！</td>
-<td style="text-align:right">错误信息</td>
 </tr>
 </tbody>
 </table>
