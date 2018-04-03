@@ -64,7 +64,7 @@
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">// 按照 ASSCI排序请求参数：</span><br><span class="line">dataSignString = amount=1000&amp;in_open_id=xd8wjr9jr02kjf823jse94kio8&amp;notify_url=http://www.test.com/callback&amp;out_open_id=lJsDBB01QzGpBKOC7uaZB6D0QGZWBMCS&amp;out_order_no=2334234343zz&amp;title=test</span><br><span class="line">// 拼接appkey和基础签名</span><br><span class="line">dataSign = dataSignString + &quot;&amp;key=123456&quot; + &quot;&amp;basesign=&quot; + baseSign</span><br><span class="line"></span><br><span class="line">// 获得联合签名</span><br><span class="line">sign = basesign + &quot;.&quot; + MD5(dataSign).toUpperCase()</span><br></pre></td></tr></table></figure>
 <p>纯数据签名：</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">// 按照 ASSCI排序请求参数：</span><br><span class="line">onlyDataSignString = agentpay_no=ds99fjjwekwerjfm&amp;app_id=test&amp;out_order_no=lJsDBB01QzGpBKOC7uaZB6D0QGZWBMCS&amp;status=1&amp;time=1517928240</span><br><span class="line"></span><br><span class="line">// 拼接appkey</span><br><span class="line">onlyDataSign = onlyDataSignString + &quot;&amp;key=123456&quot;</span><br><span class="line">// 获得数据签名</span><br><span class="line">onlySign = MD5(onlyDataSign).toUpperCase()</span><br></pre></td></tr></table></figure>
-<h2 id="基础说明"><a href="#基础说明" class="headerlink" title="基础说明"></a>基础说明</h2><h4 id="基地址-http-paybusapi-qiyunxin-cn-v1"><a href="#基地址-http-paybusapi-qiyunxin-cn-v1" class="headerlink" title="基地址: http://paybusapi.qiyunxin.cn/v1"></a>基地址: <a href="http://paybusapi.qiyunxin.cn" target="_blank" rel="noopener">http://paybusapi.qiyunxin.</a>cn/v1</h4><h4 id="测试数据"><a href="#测试数据" class="headerlink" title="测试数据"></a>测试数据</h4><p>app_id: test</p>
+<h2 id="基础说明"><a href="#基础说明" class="headerlink" title="基础说明"></a>基础说明</h2><h4 id="测试基地址-http-dev-vvchat-im"><a href="#测试基地址-http-dev-vvchat-im" class="headerlink" title="测试基地址: http://dev.vvchat.im"></a>测试基地址: <a href="http://dev.vvchat.im" target="_blank" rel="noopener">http://dev.vvchat.im</a></h4><h4 id="测试数据"><a href="#测试数据" class="headerlink" title="测试数据"></a>测试数据</h4><p>app_id: test</p>
 <p>app_key: 123456</p>
 <p>out_open_id:  lJsDBB01QzGpBKOC7uaZB6D0QGZWBMCS  // 出款账户</p>
 <h4 id="公共参数"><a href="#公共参数" class="headerlink" title="公共参数"></a>公共参数</h4><p>公用参数是在 http的header里,所有接口都需要带公共参数</p>
@@ -107,7 +107,7 @@
 <h2 id="统一下单接口"><a href="#统一下单接口" class="headerlink" title="统一下单接口"></a>统一下单接口</h2><blockquote>
 <p>请求地址</p>
 </blockquote>
-<p>POST /pay/unifiedorder </p>
+<p>POST /paybusapi/v1/pay/unifiedorder</p>
 <blockquote>
 <p>请求参数</p>
 </blockquote>
@@ -379,7 +379,7 @@
 <h2 id="代付接口（提现接口）"><a href="#代付接口（提现接口）" class="headerlink" title="代付接口（提现接口）"></a>代付接口（提现接口）</h2><blockquote>
 <p>请求地址</p>
 </blockquote>
-<p>POST /app/agentpay</p>
+<p>POST /paybusapi/v1/app/agentpay</p>
 <blockquote>
 <p>请求参数</p>
 </blockquote>
@@ -509,7 +509,7 @@
 <blockquote>
 <p>请求地址</p>
 </blockquote>
-<p>GET  <a href="http://BASE_URL/userservices/v2/authorization/token?app_id=APPID&amp;app_key=APPKEY&amp;code=CODE" target="_blank" rel="noopener">http://BASE_URL/userservices/v2/authorization/token?app_id=APPID&amp;app_key=APPKEY&amp;code=CODE</a></p>
+<p>GET  /userservices/v2/authorization/token?app_id=APPID&amp;app_key=APPKEY&amp;code=CODE</p>
 <blockquote>
 <p>请求参数</p>
 </blockquote>
@@ -604,7 +604,7 @@
 <blockquote>
 <p>请求地址</p>
 </blockquote>
-<p>POST  <a href="http://BASE_URL/messageapi/v1/authorization/sendmsg" target="_blank" rel="noopener">http://BASE_URL/messageapi/v1/authorization/sendmsg</a></p>
+<p>POST  /messageapi/v1/authorization/sendmsg</p>
 <p>Content-Type: application/json</p>
 <blockquote>
 <p>请求参数</p>
