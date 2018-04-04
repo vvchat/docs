@@ -140,7 +140,7 @@
 </tr>
 </tbody>
 </table>
-<h2 id="统一下单接口"><a href="#统一下单接口" class="headerlink" title="统一下单接口"></a>统一下单接口</h2><p><strong>基础签名</strong></p>
+<h2 id="统一下单接口"><a href="#统一下单接口" class="headerlink" title="统一下单接口"></a>统一下单接口</h2><p><strong>数据签名</strong></p>
 <blockquote>
 <p>请求地址</p>
 </blockquote>
@@ -410,6 +410,149 @@
 <td style="text-align:left">string</td>
 <td style="text-align:left">xxxxxxxxxxxxxxxxxxx</td>
 <td style="text-align:left">平台返回的签名，用户校验返回的数据真伪性</td>
+</tr>
+</tbody>
+</table>
+<h2 id="查询交易信息"><a href="#查询交易信息" class="headerlink" title="查询交易信息"></a>查询交易信息</h2><p><strong>无需签名</strong></p>
+<blockquote>
+<p>请求地址</p>
+</blockquote>
+<p>GET  /paybusapi/v1/pay/unifiedorder</p>
+<blockquote>
+<p>请求参数</p>
+</blockquote>
+<table>
+<thead>
+<tr>
+<th>参数</th>
+<th style="text-align:center">类型</th>
+<th style="text-align:right">作用域</th>
+<th style="text-align:right">参考值</th>
+<th style="text-align:right">说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>imprest_code</td>
+<td style="text-align:center">string</td>
+<td style="text-align:right">query</td>
+<td style="text-align:right">xxxxx</td>
+<td style="text-align:right">预付款编号 imprest_code,out_trade_no二选一</td>
+</tr>
+<tr>
+<td>out_trade_no</td>
+<td style="text-align:center">string</td>
+<td style="text-align:right">query</td>
+<td style="text-align:right">xxxxx</td>
+<td style="text-align:right">第三方交易号 imprest_code,out_trade_no二选一</td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<p>成功返回 200</p>
+</blockquote>
+<table>
+<thead>
+<tr>
+<th>参数</th>
+<th style="text-align:center">类型</th>
+<th style="text-align:right">参考值</th>
+<th style="text-align:right">说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>open_id</td>
+<td style="text-align:center">string</td>
+<td style="text-align:right">eyJhbGciOiJSUzI1NiIsInR5cCI6xxxxx</td>
+<td style="text-align:right">下单用户唯一标示</td>
+</tr>
+<tr>
+<td>store_no</td>
+<td style="text-align:center">string</td>
+<td style="text-align:right">xxxx</td>
+<td style="text-align:right">店铺编号</td>
+</tr>
+<tr>
+<td>out_trade_no</td>
+<td style="text-align:center">string</td>
+<td style="text-align:right">xxxxx</td>
+<td style="text-align:right">第三方唯一编号</td>
+</tr>
+<tr>
+<td>trade_no</td>
+<td style="text-align:center">string</td>
+<td style="text-align:right">xxxx</td>
+<td style="text-align:right">平台唯一交易编号</td>
+</tr>
+<tr>
+<td>imprest_code</td>
+<td style="text-align:center">string</td>
+<td style="text-align:right">xxxx</td>
+<td style="text-align:right">预付款编号</td>
+</tr>
+<tr>
+<td>amount</td>
+<td style="text-align:center">int64</td>
+<td style="text-align:right">1000</td>
+<td style="text-align:right">交易金额，单位分</td>
+</tr>
+<tr>
+<td>title</td>
+<td style="text-align:center">string</td>
+<td style="text-align:right">xxxx</td>
+<td style="text-align:right">交易标题</td>
+</tr>
+<tr>
+<td>remark</td>
+<td style="text-align:center">string</td>
+<td style="text-align:right">xxxx</td>
+<td style="text-align:right">交易备注</td>
+</tr>
+<tr>
+<td>notify_url</td>
+<td style="text-align:center">string</td>
+<td style="text-align:right"><a href="http://www.xxx.com" target="_blank" rel="noopener">http://www.xxx.com</a></td>
+<td style="text-align:right">回调地址</td>
+</tr>
+<tr>
+<td>scene_type</td>
+<td style="text-align:center">string</td>
+<td style="text-align:right">APP</td>
+<td style="text-align:right">场景类型 APP,WEB</td>
+</tr>
+<tr>
+<td>status</td>
+<td style="text-align:center">int</td>
+<td style="text-align:right">1</td>
+<td style="text-align:right">0.待支付 1.已支付</td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<p>错误返回 400</p>
+</blockquote>
+<table>
+<thead>
+<tr>
+<th>参数</th>
+<th style="text-align:center">类型</th>
+<th style="text-align:right">参考值</th>
+<th style="text-align:right">说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>err_code</td>
+<td style="text-align:center">int</td>
+<td style="text-align:right">400</td>
+<td style="text-align:right">错误代号</td>
+</tr>
+<tr>
+<td>err_msg</td>
+<td style="text-align:center">string</td>
+<td style="text-align:right">请求失败！</td>
+<td style="text-align:right">错误信息</td>
 </tr>
 </tbody>
 </table>
