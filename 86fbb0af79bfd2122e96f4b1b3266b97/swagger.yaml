@@ -1,0 +1,220 @@
+swagger: '2.0'
+info:
+  description: 推送服务
+  version: 1.0.0
+  title: 推送服务
+host: notificationapi.qiyunxin.com
+tags:
+  - name: notification
+    description: 推送
+securityDefinitions:
+  app_id:
+    type: apiKey
+    in: header
+    name: app_id
+    description: 应用ID
+  Authorization:
+    type: apiKey
+    in: header
+    name: Authorization
+    description: 用户token
+schemes:
+  - http
+basePath: /v1
+produces:
+  - application/json
+paths:
+  '/users/{open_id}/devices':
+    delete:
+      tags:
+        - notification
+      summary: 注销设备
+      description: 注销设备
+      operationId: DevicesUnRegister
+      parameters:
+        - in: path
+          name: open_id
+          description: 用户open_id
+          type: string
+          required: true
+        - in: body
+          name: body
+          description: 入参
+          required: false
+          schema:
+            type: object
+            properties:
+              device_token:
+                type: string
+                description: ios设备token
+      responses:
+        '200':
+          description: 返回
+          schema:
+            type: object
+            properties:
+              err_code:
+                type: string
+              err_msg:
+                type: string
+        '400':
+          description: 错误
+          schema:
+            type: object
+            properties:
+              err_code:
+                type: string
+              err_msg:
+                type: string
+      security:
+        - app_id: []
+        - Authorization: []
+    post:
+      tags:
+        - notification
+      summary: 注册设备
+      description: 注册设备
+      operationId: DevicesRegister
+      parameters:
+        - in: path
+          name: open_id
+          description: 用户open_id
+          type: string
+          required: true
+        - in: body
+          name: body
+          description: 入参
+          required: false
+          schema:
+            type: object
+            properties:
+              device_token:
+                type: string
+                description: ios设备token
+      responses:
+        '200':
+          description: 返回
+          schema:
+            type: object
+            properties:
+              err_code:
+                type: string
+              err_msg:
+                type: string
+        '400':
+          description: 错误
+          schema:
+            type: object
+            properties:
+              err_code:
+                type: string
+              err_msg:
+                type: string
+      security:
+        - app_id: []
+        - Authorization: []
+  '/users/{open_id}/pushsetting':
+    post:
+      tags:
+        - notification
+      summary: 推送设置开关(此接口仅内部调用)
+      description: 推送设置开关（此接口仅内部调用）如果想修改推送配置，需要走设置服务，具体请参考settingapi服务
+      operationId: PushSettingOnOff
+      parameters:
+        - in: path
+          name: open_id
+          description: 用户open_id
+          type: string
+          required: true
+        - in: body
+          name: body
+          description: 入参
+          required: false
+          schema:
+            type: object
+            properties:
+              scope:
+                type: string
+                description: 作用域 所有（ALL） 群聊 （GROUP）  个人（PERSON）
+              type:
+                type: string
+                description: '类型 SOUND:推送声音  PUSH:是否推送'
+              uid:
+                type: string
+                description: 唯一ID 如果是ALL 不需要填 GROUP就是群聊ID  PERSION就是个人ID
+              on_off:
+                type: string
+                description: 开关 ON：开 OFF 关
+      responses:
+        '200':
+          description: 返回
+          schema:
+            type: object
+            properties:
+              err_code:
+                type: string
+              err_msg:
+                type: string
+        '400':
+          description: 错误
+          schema:
+            type: object
+            properties:
+              err_code:
+                type: string
+              err_msg:
+                type: string
+      security:
+        - app_id: []
+        - Authorization: []
+definitions:
+  PushSetting:
+    type: object
+    properties:
+      scope:
+        type: string
+        description: 作用域 所有（ALL） 群聊 （GROUP）  个人（PERSON）
+      type:
+        type: string
+        description: '类型 SOUND:推送声音  PUSH:是否推送'
+      uid:
+        type: string
+        description: 唯一ID 如果是ALL 不需要填 GROUP就是群聊ID  PERSION就是个人ID
+      on_off:
+        type: string
+        description: 开关 ON：开 OFF 关
+  UnreadMsgCountUpdateInput:
+    type: object
+    properties:
+      unread_count:
+        type: integer
+        description: 消息未读数
+  DevicesInput:
+    type: object
+    properties:
+      device_token:
+        type: string
+        description: ios设备token
+  BaseModel:
+    type: object
+    properties:
+      id:
+        type: integer
+        format: int64
+        description: id
+      app_id:
+        type: string
+        description: app id
+      create_time:
+        type: string
+        description: 创建时间
+      update_time:
+        type: string
+        description: 修改时间
+  Error:
+    type: object
+    properties:
+      err_code:
+        type: string
+      err_msg:
+        type: string

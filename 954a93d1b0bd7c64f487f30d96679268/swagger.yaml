@@ -1,0 +1,121 @@
+swagger: '2.0'
+info:
+  description: 反馈服务
+  version: 1.0.0
+  title: 反馈服务
+host: feedapi.qiyunxin.com
+tags:
+  - name: feedService
+    description: 反馈服务
+securityDefinitions:
+  app_id:
+    type: apiKey
+    in: header
+    name: app_id
+    description: 应用ID
+  Authorization:
+    type: apiKey
+    in: header
+    name: Authorization
+    description: 用户token
+  timestamp:
+    type: apiKey
+    in: header
+    name: timestamp
+    description: 签名
+schemes:
+  - http
+basePath: /v1
+produces:
+  - application/json
+paths:
+  '/{open_id}/feeds':
+    post:
+      summary: 反馈意见
+      security:
+        - app_id: []
+        - Authorization: []
+      description: 反馈意见
+      parameters:
+        - name: open_id
+          in: path
+          description: 用户ID
+          required: true
+          type: string
+        - name: tag
+          in: body
+          description: 反馈意见
+          required: true
+          schema:
+            type: object
+            description: 反馈对象
+            properties:
+              feeds_imgs_input:
+                type: array
+                description: 图片数组
+                items:
+                  type: object
+                  description: 成员对象
+                  properties:
+                    url:
+                      type: string
+                      description: 图片地址
+              feed_content:
+                type: string
+                description: 反馈内容
+      tags:
+        - labelService
+      responses:
+        '200':
+          description: 反馈意见
+          schema:
+            type: object
+            description: 错误描述
+            properties:
+              err_code:
+                type: string
+              err_msg:
+                type: string
+        '400':
+          description: 错误
+          schema:
+            type: object
+            description: 错误描述
+            properties:
+              err_code:
+                type: string
+              err_msg:
+                type: string
+definitions:
+  TagInput:
+    type: object
+    description: 反馈对象
+    properties:
+      feeds_imgs_input:
+        type: array
+        description: 图片数组
+        items:
+          type: object
+          description: 成员对象
+          properties:
+            url:
+              type: string
+              description: 图片地址
+      feed_content:
+        type: string
+        description: 反馈内容
+  Members:
+    type: object
+    description: 成员对象
+    properties:
+      url:
+        type: string
+        description: 图片地址
+  Error:
+    type: object
+    description: 错误描述
+    properties:
+      err_code:
+        type: string
+      err_msg:
+        type: string
